@@ -7,7 +7,7 @@
     <context:component-scan base-package="com.john" use-default-filters="true"/>
 
     <context:property-placeholder location="classpath:myProperties.properties"/>
-    <bean class="com.john.beans.Person" id="person" scope="prototype" lazy-init="true" init-method="" destroy-method="">
+    <bean class="com.john.beans.Person" id="person" scope="prototype" lazy-init="true" >
         <property name="name" value="zhangsan"></property>
         <property name="age" value="10"></property>
     </bean>
