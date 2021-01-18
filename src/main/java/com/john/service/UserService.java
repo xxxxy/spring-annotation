@@ -10,10 +10,10 @@ import javax.inject.Inject;
 
 @Service
 public class UserService {
-    /*@Qualifier("userDao")
-    @Autowired(required = false)*/
+    /*@Qualifier("userDao")*/
+    @Autowired(required = false)
     //@Resource(name = "userDao2")
-    @Inject
+    //@Inject
     private UserDao userDao;
 
     @Override

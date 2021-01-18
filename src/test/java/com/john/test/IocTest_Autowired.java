@@ -1,6 +1,9 @@
 package com.john.test;
 
+import com.john.beans.Child;
+import com.john.beans.Older;
 import com.john.beans.Person;
+import com.john.beans.Sugar;
 import com.john.config.MainConfigOfAutowired;
 import com.john.config.MainConfigOfPropertyValue;
 import com.john.dao.UserDao;
@@ -20,6 +23,17 @@ public class IocTest_Autowired {
 
         /*UserDao bean1 = context.getBean(UserDao.class);
         System.out.println(bean1);*/
+
+        Child bean1 = context.getBean(Child.class);
+        Sugar sugar = bean1.getSugar();
+        System.out.println(sugar);
+        Sugar bean2 = context.getBean(Sugar.class);
+        System.out.println(bean2);
+
+        Older bean3 = context.getBean(Older.class);
+        System.out.println(bean3);
+
+        System.out.println("context容器：" + context);
         context.close();
     }
 }
