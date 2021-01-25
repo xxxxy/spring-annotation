@@ -6,6 +6,7 @@ import com.john.config.MainConfig;
 import com.john.config.MainConfig2;
 import com.john.ext.ExtConfig;
 import org.junit.Test;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
@@ -15,6 +16,9 @@ public class Ioc_ext {
     @Test
     public void test01(){
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ExtConfig.class);
+        //自定义发布事件
+        context.publishEvent(new ApplicationEvent(("my event")) {
+        });
 
         context.close();
     }
